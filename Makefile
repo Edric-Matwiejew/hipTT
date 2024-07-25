@@ -97,7 +97,7 @@ CFLAGS += -march=native
 endif
 
 #CUDA_CFLAGS = -ccbin $(GPU_CC) -I${CUDAROOT}/include -std=c++11 $(OPTLEV) -Xptxas -dlcm=ca -lineinfo $(GENCODE_FLAGS) --resource-usage -Xcompiler -fPIC -D_FORCE_INLINES -x cu -Wno-deprecated-declarations
-CUDA_CFLAGS = --amdgpu-target=gfx906,gfx908 -std=c++11 $(OPTLEV) -D_FORCE_INLINES
+CUDA_CFLAGS = -fPIC --amdgpu-target=gfx906,gfx908 -std=c++11 $(OPTLEV) -D_FORCE_INLINES
 
 ifeq ($(OS),osx)
 CUDA_LFLAGS = -L$(CUDAROOT)/lib
